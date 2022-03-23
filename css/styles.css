@@ -1,0 +1,17 @@
+/*created space between the items*/
+.listitem{
+  padding: 10px 20px
+}
+
+/*deleted the bulletpoints in front of the items*/
+.ul{
+  list-style-type: none;
+}
+
+/*changed the font, want to change and add more styling later */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
