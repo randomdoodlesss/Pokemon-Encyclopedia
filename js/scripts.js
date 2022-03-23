@@ -20,3 +20,9 @@ let pokemonList = [
     type: ['ground', 'poison']
   }
 ]
+
+let pokemonList = ["Jigglypuff", "Butterfree", "Nidoqueen"];
+for (let i = 0; i < pokemonList.length; i++){
+  console.log(pokemonList[i])  
+}
+}
