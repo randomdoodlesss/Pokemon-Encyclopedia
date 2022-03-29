@@ -29,11 +29,11 @@ document.write('<ul class="ul">')
 
 //this is the for loop I created to display the name and height of the Pokemon on a loop)
 for (let i = 0; i < pokemonList.length; i++) {
+  if (pokemonList.height >= 35){
+    document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'Height: ' + pokemonList[i].height + ' - The big boss is here' + '</li>');
+  }
+  else
   document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'Height: ' + pokemonList[i].height + '</li>');
-}
-
-if (pokemonList => 35){
-  document.write(' - The big boss is here!')
 }
 
 document.write('</ul>')
