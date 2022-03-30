@@ -27,13 +27,13 @@ document.write('<h1>Pokemon Encyclopedia</h1>');
 //this is to create an unordered list of the items in pokemonList
 document.write('<ul class="ul">')
 
-//this is the for loop I created to display the name and height of the Pokemon on a loop)
+//this is the for loop I created to display the name and weight of the Pokemon on a loop, it includes a conditional for the weight value)
 for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList.height >= 35){
-    document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'Height: ' + pokemonList[i].height + ' - The big boss is here' + '</li>');
+  if (pokemonList[i].weight >= 35){
+    document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'weight: ' + pokemonList[i].weight + ' - The big boss is here' + '</li>');
   }
   else
-  document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'Height: ' + pokemonList[i].height + '</li>');
+    document.write('<li class="listitem"> ' + pokemonList[i].name + ' ' + 'weight: ' + pokemonList[i].weight + '</li>');
 }
 
 document.write('</ul>')
