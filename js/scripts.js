@@ -5,19 +5,19 @@ let pokemonRepository = (function () {
       name: 'Jigglypuff',
       height: 0.5,
       weight: 5.5,
-      type: ['fairy', 'normal']
+      type: ['fairy', ' normal']
     },
     {
       name: 'Butterfree',
       height: 1.1,
       weight: 32,
-      type: ['bug', 'flying']
+      type: ['bug', ' flying']
     },
     {
       name: 'Nidoqueen',
       height: 1.3,
       weight: 60,
-      type: ['ground', 'poison']
+      type: ['ground', ' poison']
     }
   ]
 
@@ -41,6 +41,6 @@ let pokemonRepository = (function () {
 
 //created a new forEach loop to list all pokemons on the list
 pokemonRepository.getAll().forEach (function(pokemon) {
-  document.write("<p>" + "Name:  " + pokemon.name + " Height: " + pokemon.height + " Weight: " + pokemon.weight + " Type: " + pokemon.type + "<p>");
+  document.write("<p>" + "Name:  " + pokemon.name + " - Height: " + pokemon.height + " // Weight: " + pokemon.weight + " // Type: " + pokemon.type + "<p>");
 
 });
