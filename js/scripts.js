@@ -1,14 +1,46 @@
-let pokemonList = [
-  { name: 'Jigglypuff', height: 0.5, weight: 5.5, type: ['fairy', 'normal'] },
-  {name: 'Butterfree', height: 1.1, weight: 32, type: ['bug', 'flying'] },
-  {name: 'Nidoqueen', height: 1.3, weight: 60, type: ['ground', 'poison'] },
-];
+//wrapping pokemonList in IIFE format
+let pokemonRepository = (function () {
+  let pokemonList = [
+    {
+      name: 'Jigglypuff',
+      height: 0.5,
+      weight: 5.5,
+      type: ['fairy', 'normal']
+    },
+    {
+      name: 'Butterfree',
+      height: 1.1,
+      weight: 32,
+      type: ['bug', 'flying']
+    },
+    {
+      name: 'Nidoqueen',
+      height: 1.3,
+      weight: 60,
+      type: ['ground', 'poison']
+    }
+  ]
 
-//this is the for loop I created to display the name and weight of the Pokemon on a loop, it includes a conditional for the weight value)
-for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].weight >= 35){
-    document.write("<p>" + pokemonList[i].name + ' ' + 'weight: ' + pokemonList[i].weight + ' - The big boss is here' + "</p>");
+  //added get all function to return pokemonList
+  function getAll () {
+    return pokemonList;
   }
-  else
-  document.write("<p>" + pokemonList[i].name + ' ' + 'weight: ' + pokemonList[i].weight + "</p>");
-}
+
+  //added function to call single items
+  function add (pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  //returning the above getAll and add functions
+  return {
+    getAll: getAll,
+    add: add
+  }
+
+})();
+
+//created a new forEach loop to list all pokemons on the list
+pokemonRepository.getAll().forEach (function(pokemon) {
+  document.write("<p>" + "Name:  " + pokemon.name + " Height: " + pokemon.height + " Weight: " + pokemon.weight + " Type: " + pokemon.type + "<p>");
+
+});
