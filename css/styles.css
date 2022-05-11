@@ -4,8 +4,12 @@
 }
 
 /*deleted the bulletpoints in front of the items*/
-.ul{
+/*.ul{
   list-style-type: none;
+}*/
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
 }
 
 /*changed the font, want to change and add more styling later */
