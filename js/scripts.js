@@ -18,29 +18,51 @@ let pokemonRepository = (function () {
       height: 1.3,
       weight: 60,
       type: ['ground', ' poison']
-    }
-  ]
-
-  //added get all function to return pokemonList
-  function getAll () {
-    return pokemonList;
-  }
-
-  //added function to call single items
-  function add (pokemon) {
-    pokemonList.push(pokemon);
-  }
-
-  //returning the above getAll and add functions
-  return {
-    getAll: getAll,
-    add: add
-  }
-
+    },
+  ];
+ function add(pokemon) {
+   if (
+     typeof pokemon === "object" &&
+     "name" in pokemon &&
+     "height" in pokemon &&
+     "weight" in pokemon &&
+     "types" in pokemon
+   ) {
+     pokemonList.push(pokemon);
+   } else {
+     console.log("pokemon not found");
+   }
+ }
+ function getAll() {
+   return pokemonList;
+ }
+ function addListItem(pokemon){
+   let pokemonList = document.querySelector(".pokemon-list");
+   let pokemonitem = document.createElement("li");
+   let button = document.createElement("button");
+   button.innerText = pokemon.name;
+   button.classList.add("pokemon-list-button");
+   pokemonitem.appendChild(button);
+   pokemonList.appendChild(pokemonitem);
+   addEvent(button, pokemon);
+ }
+ function addEvent(button,pokemon) {
+   button.addEventListener('click', function() {
+     showDetails(pokemon);
+   });
+ }
+   function showDetails(pokemon) {
+       console.log(pokemon);
+   }
+ return {
+   add: add,
+   getAll: getAll,
+   addListItem: addListItem
+ };
 })();
 
-//created a new forEach loop to list all pokemons on the list
-pokemonRepository.getAll().forEach (function(pokemon) {
-  document.write("<p>" + "Name:  " + pokemon.name + " - Height: " + pokemon.height + " // Weight: " + pokemon.weight + " // Type: " + pokemon.type + "<p>");
+console.log(pokemonRepository.getAll());
 
+pokemonRepository.getAll().forEach(function (pokemon) {
+ pokemonRepository.addListItem(pokemon);
 });
